@@ -54,6 +54,7 @@ function addTaskItem(taskText){
         deleteBtn.textContent="X";
         deleteBtn.className="delete=btn";
         deleteBtn.style.marginleft = "8px";
+        deleteBtn.style.backgroundColor = "#008000"
         deleteBtn.onclick = () => handleDeleteClick(li);
 
         console.log("createDeleteButton() called ->", li.textContent);
