@@ -10,26 +10,40 @@
     <h1>TO DO LIST</h1>
     <input type = "text"
            id = "taskinput"
-           placeholder="Add a task "
+           placeholder="Add a task"
   /> 
-   <button onclick="AddTask()">add</button>
+   <button onclick="addTask()">add</button>
+
+   <ul id="tasklist"> Your tasks goes here ...</ul>
 
  <script>
 
-function AddTask() {
-   getTaskText();
+function addTask() {
+   const taskText = getTaskText();
+
+   if(taskText){
+    addTaskItem(taskText);
+   } else {
+    console.log("No task entered");
+   }
 
 }
 
 function getTaskText() {
-const input =document.getElementById('taskinput') ;
+const input =document.getElementById('taskinput');
 const text = input.value.trim();
-console,log("getTaskText() called: " + input.value) ;
 
-return{text,input} ;
-
+console.log("getTaskText() called: " + input.value);
+return text;
 }
 
+function addTaskItem(taskText){
+    const li = document.createElement("li");
+    li.textContent = taskText;
+
+    document.getElementById("tasklist").appendChild(li);
+    console.log("addTaskItem() called ->: ", taskText, Date());
+}
  </script>
 
  </body>
