@@ -16,6 +16,10 @@
 
     <style>
      #map { height: 400px; }
+     .pop-image {
+        max-width: 200px;
+        height: auto;
+     }
      </style>
 </head>
 <body>
@@ -32,7 +36,10 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 var marker = L.marker([8.360062680673515, 124.86803862252286]).addTo(map);
-marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+const dogeImage = "<img src='https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Original_Doge_meme.jpg/250px-Original_Doge_meme.jpg' class= popup image> ";
+const popupContent = `${dogeImage}<br><b>Hello world!</b><br>I am a popup.`;
+
+marker.bindPopup(popupContent).openPopup();
 
 </script>
 </html>
